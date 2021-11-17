@@ -34,6 +34,7 @@ function engadirTarefa(event) {
     tarefas.push(formulario.tarefa.value);
     mostrarTarefas();
     formulario.reset();
+    gardarDatos();
     return false;
 }
 
@@ -43,6 +44,18 @@ function cambiarEstadoTarefa(event) {
     let i = check.dataset.index;
     feitas[i] = !feitas[i];
     mostrarTarefas();
+    gardarDatos();
 }
 
+function gardarDatos() {
+    localStorage.setItem("tarefas", JSON.stringify(tarefas));
+    localStorage.setItem("feitas", JSON.stringify(feitas));
+}
+
+function cargarDatos() {
+    tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
+    feitas = JSON.parse(localStorage.getItem("feitas")) || [];
+}
+
+cargarDatos();
 mostrarTarefas();
