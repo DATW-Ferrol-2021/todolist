@@ -5,6 +5,7 @@ var tarefas = [
     "Unha de proba"
 ];
 
+var feitas = [];
 
 function mostrarTarefas() {
     elemTarefas.innerHTML = "";
@@ -15,6 +16,11 @@ function mostrarTarefas() {
         checkbox.setAttribute("type", "checkbox");
         //checkbox.setAttribute("name", checkId);
         checkbox.setAttribute("id", checkId);
+        checkbox.dataset.index = i;
+        if (feitas[i]) {
+            checkbox.setAttribute("checked", "checked");
+        }
+        checkbox.onchange = cambiarEstadoTarefa;
         let label = document.createElement("label");
         label.innerText = t;
         label.setAttribute("for", checkId);
@@ -29,6 +35,14 @@ function engadirTarefa(event) {
     mostrarTarefas();
     formulario.reset();
     return false;
+}
+
+
+function cambiarEstadoTarefa(event) {
+    let check = event.target;
+    let i = check.dataset.index;
+    feitas[i] = !feitas[i];
+    mostrarTarefas();
 }
 
 mostrarTarefas();
