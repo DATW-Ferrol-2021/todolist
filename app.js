@@ -57,5 +57,12 @@ function cargarDatos() {
     feitas = JSON.parse(localStorage.getItem("feitas")) || [];
 }
 
+function eliminarTarefasFeitas() {
+    tarefas = tarefas.filter((t, i) => !feitas[i]);
+    feitas = [];
+    mostrarTarefas();
+    gardarDatos();
+}
+
 cargarDatos();
 mostrarTarefas();
