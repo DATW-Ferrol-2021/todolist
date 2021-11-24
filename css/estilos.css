@@ -8,5 +8,9 @@ li {
     text-align: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 16pt;
-    
+}
+
+form {
+    /*Centrado del contenido del formulario*/
+    text-align: center;
 }
