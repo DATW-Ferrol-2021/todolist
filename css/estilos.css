@@ -1,7 +1,12 @@
 li {
-    /*Estilos de borde*/
+    /*Estilos de borde del <li>*/
     border-style: solid;
     border-radius: 5pt;
     border-width: 1.5pt;
+    
+    /*Estilos al contenido del <li>*/
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 16pt;
     
 }
